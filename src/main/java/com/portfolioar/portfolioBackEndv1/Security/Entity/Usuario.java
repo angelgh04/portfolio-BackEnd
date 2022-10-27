@@ -1,6 +1,5 @@
 package com.portfolioar.portfolioBackEndv1.Security.Entity;
 
-import static com.fasterxml.jackson.databind.util.ClassUtil.name;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -13,7 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
-import static org.apache.tomcat.jni.Lock.name;
 
 @Entity
 public class Usuario {
