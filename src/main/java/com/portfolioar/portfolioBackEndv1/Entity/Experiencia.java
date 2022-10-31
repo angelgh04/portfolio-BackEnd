@@ -5,10 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+//Usamos Entity para decirle que es una entidad
 @Entity
 public class Experiencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     private int id;
     private String nombreE;
     private String descripcionE;
@@ -20,7 +22,8 @@ public class Experiencia {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
-
+    
+    //Insertamos los Getters y Setters
     public int getId() {
         return id;
     }
