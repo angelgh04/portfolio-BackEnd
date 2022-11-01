@@ -15,17 +15,39 @@ import lombok.Setter;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
+    
+    @NotNull
+    @Size(min = 3, max = 50, message = "El apellido debe tener más de 3 caracteres")
+    private String apellido;
     
     @NotNull
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String nombre;
     
     @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
-    private String apellido;
+    private String descripcion;
     
+    @NotNull
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
-    private String img;   
+    private String perfil;
+    
+    @NotNull
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    private String ubicacion;
+    
+    private String imagen;  
+
+    public Persona() {
+    }
+
+    public Persona(String apellido, String nombre, String descripcion, String perfil, String ubicacion, String imagen) {
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.perfil = perfil;
+        this.ubicacion = ubicacion;
+        this.imagen = imagen;
+    }
     
 }
