@@ -48,10 +48,10 @@ public class CExperiencia {
         if(sExperiencia.existsByNombreE(dtoexp.getNombreE()))
             return new ResponseEntity(new Mensaje("La experiencia ya se encuentra registrada"), HttpStatus.BAD_REQUEST);
         
-        Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getDescripcionE());
+        Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getDescripcionE(), dtoexp.getLugarE(), dtoexp.getFechaE());
         sExperiencia.save(experiencia);
         
-        return new ResponseEntity(new Mensaje("La Experiencia Labora se registró exitosamente"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("La Experiencia Laboral se registró exitosamente"), HttpStatus.OK);
     }
     
     @DeleteMapping("/delete/{id}")
@@ -78,6 +78,8 @@ public class CExperiencia {
         //Buscamos el nombre en el dto y lo seteamos a experiencia
         experiencia.setNombreE(dtoexp.getNombreE());
         experiencia.setDescripcionE((dtoexp.getDescripcionE()));
+        experiencia.setLugarE((dtoexp.getLugarE()));
+        experiencia.setFechaE((dtoexp.getFechaE()));
         
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje ("La Experiencia se actualizó correctamente"), HttpStatus.OK);
