@@ -5,13 +5,10 @@ import javax.validation.constraints.NotBlank;
 public class dtoEducacion {
     @NotBlank
     private String tituloE;
-    
     @NotBlank
     private String institutoE;
-    
     @NotBlank
     private String lugarE;
-    
     @NotBlank
     private String fechaE;
 
